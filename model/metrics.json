@@ -1,0 +1,70 @@
+{
+  "best_model": "random_forest",
+  "cv_accuracy": {
+    "random_forest": 0.9058333333333333,
+    "svm_rbf": 0.8895833333333334,
+    "knn": 0.8145833333333333
+  },
+  "test_folds": [
+    9,
+    10
+  ],
+  "test_accuracy": 0.8916666666666667,
+  "n_train": 2400,
+  "n_test": 600,
+  "classes": [
+    "dog_bark",
+    "drilling",
+    "street_music"
+  ],
+  "confusion_matrix": [
+    [
+      164,
+      23,
+      13
+    ],
+    [
+      15,
+      179,
+      6
+    ],
+    [
+      6,
+      2,
+      192
+    ]
+  ],
+  "classification_report": {
+    "dog_bark": {
+      "precision": 0.8864864864864865,
+      "recall": 0.82,
+      "f1-score": 0.8519480519480519,
+      "support": 200.0
+    },
+    "drilling": {
+      "precision": 0.8774509803921569,
+      "recall": 0.895,
+      "f1-score": 0.8861386138613861,
+      "support": 200.0
+    },
+    "street_music": {
+      "precision": 0.909952606635071,
+      "recall": 0.96,
+      "f1-score": 0.9343065693430657,
+      "support": 200.0
+    },
+    "accuracy": 0.8916666666666667,
+    "macro avg": {
+      "precision": 0.8912966911712381,
+      "recall": 0.8916666666666666,
+      "f1-score": 0.8907977450508345,
+      "support": 600.0
+    },
+    "weighted avg": {
+      "precision": 0.8912966911712381,
+      "recall": 0.8916666666666667,
+      "f1-score": 0.8907977450508345,
+      "support": 600.0
+    }
+  }
+}
