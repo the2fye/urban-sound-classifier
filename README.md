@@ -2,14 +2,16 @@
 
 A classical machine learning model that classifies short audio clips as **dog bark**, **drilling**, or **street music**, deployed as an interactive Streamlit app. There is no deep learning here. Each clip is converted into 151 hand-built audio features with librosa, and a scikit-learn model is trained on those features.
 
-![App screenshot](docs/app_home.png)
+**Live demo: [urban-sounds-classifier.streamlit.app](https://urban-sounds-classifier.streamlit.app)**
+
+![App classifying a dog barking recording, with waveform and mel spectrogram](docs/app_demo.png)
 
 ## What it does
 
 - Extracts time, frequency, and cepstral features from each clip
 - Compares three classifiers using cross validation grouped by recording fold
 - Saves the best model and serves it in a Streamlit app
-- In the app you can upload any WAV or MP3, hear it, see its waveform and mel spectrogram, and get a prediction with class probabilities
+- In the app you can upload any WAV or MP3, play it back, see its waveform and mel spectrogram, and get a prediction with class probabilities
 
 ## Data
 
@@ -82,6 +84,14 @@ The training clips are 4 seconds or shorter, but real uploads can be much longer
 | Street carnival (35.8 s) | street_music | 52.7% |
 
 The street carnival recording was the least certain (dog_bark was second at 38.7%) because it mixes crowd noise and percussion hits into the music, and those short, sharp sounds look a lot like barks to the features.
+
+![Street carnival recording classified as street music](docs/pred_street_carnival.png)
+
+The power drill clip has about a second of silence on each end, but the drill itself shows up clearly as steady horizontal bands in the spectrogram, which is the kind of pattern the spectral flatness and MFCC features pick up on.
+
+![Power drill recording classified as drilling](docs/pred_power_drill.png)
+
+![Summary table of the three predictions](docs/pred_summary.png)
 
 ### What I would try next
 
