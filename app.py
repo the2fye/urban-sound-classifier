@@ -62,7 +62,8 @@ def predict_file(y):
 
 
 def plot_audio(y):
-    fig, axes = plt.subplots(1, 2, figsize=(12, 3))
+    # stacked so each plot gets the full column width
+    fig, axes = plt.subplots(2, 1, figsize=(10, 6))
     librosa.display.waveshow(y, sr=SR, ax=axes[0])
     axes[0].set_title("Waveform")
     mel = librosa.power_to_db(librosa.feature.melspectrogram(y=y, sr=SR), ref=np.max)
