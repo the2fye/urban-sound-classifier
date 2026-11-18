@@ -4,6 +4,8 @@ A classical machine learning model that classifies short audio clips as **dog ba
 
 **Live demo: [urban-sounds-classifier.streamlit.app](https://urban-sounds-classifier.streamlit.app)**
 
+To try it, download the three recordings in [`samples/`](samples) and upload them to the app.
+
 ![App classifying a dog barking recording, with waveform and mel spectrogram](docs/app_demo.png)
 
 ## What it does
@@ -75,7 +77,7 @@ Street music was the easiest class, with 192 of 200 clips correct. Most of the e
 
 ### Longer recordings
 
-The training clips are 4 seconds or shorter, but real uploads can be much longer. The app splits any longer file into 4 second windows, classifies each window, and averages the probabilities, so the model always sees input that looks like what it was trained on. On three longer test recordings (7 to 36 seconds) it got all three right:
+The training clips are 4 seconds or shorter, but real uploads can be much longer. The app splits any longer file into 4 second windows, classifies each window, and averages the probabilities, so the model always sees input that looks like what it was trained on. On three longer test recordings (7 to 36 seconds, included in `samples/`) it got all three right:
 
 | File | Prediction | Confidence |
 |---|---|---|
@@ -137,6 +139,8 @@ model/
   audio_model.joblib    Trained pipeline (scaler + random forest)
   metrics.json          CV scores, test accuracy, classification report
   confusion_matrix.png  Confusion matrix on the held-out folds
+samples/            Three longer recordings to test the app with
+docs/               Screenshots used in this README
 ```
 
 ## Tech
